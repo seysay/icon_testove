@@ -1,0 +1,20 @@
+AddDefaultCharset UTF-8
+
+RewriteEngine on
+Options All -Indexes
+
+ErrorDocument 400 /
+ErrorDocument 401 /
+ErrorDocument 402 /
+ErrorDocument 403 /
+ErrorDocument 404 /
+ErrorDocument 500 /
+
+#Don't favicon!
+<IfModule mod_rewrite.c>
+RewriteCond %{REQUEST_FILENAME} !^favicon\.ico
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+</IfModule>
+#Это все из за етой строки
+RewriteRule ^(.*)$ index.php [L,QSA]

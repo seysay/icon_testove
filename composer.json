@@ -1,0 +1,21 @@
+{
+    "name": "sey/testovelab.loc",
+    "description": "testove project",
+    "require": {
+        "twbs/bootstrap": "4.3.1",
+        "squizlabs/php_codesniffer": "*",
+        "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sey",
+            "email": "master.sey7@gmail.com"
+        }
+
+    ]
+}
