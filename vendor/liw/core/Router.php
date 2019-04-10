@@ -10,8 +10,9 @@
          $routing = [
              // путь /, є конкретний контролер мейн, і метод екшин буде виконувати індекс
              "/"=> ['controller' =>"Main", 'action' =>'index'],
-             "/edit"=> ['controller' =>"Main", 'action' =>'edit'],
-             "/delete"=> ['controller' =>"Main", 'action' =>'delete']
+             "/create.html"=> ['controller' =>"Main", 'action' =>'create'],
+             "/edit.html"=> ['controller' =>"Main", 'action' =>'edit'],
+             "/delete.php"=> ['controller' =>"Main", 'action' =>'delete']
          ];
 
          if (isset($routing[$route])) {

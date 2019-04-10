@@ -1,7 +1,8 @@
 <?php
-    /**
-     * Created by PhpStorm.
-     * User: sey
-     * Date: 4/8/19
-     * Time: 6:15 PM
-     */
+    require 'db.php';
+    $id = $_GET['id'];
+    $sql = 'DELETE FROM people WHERE id=:id';
+    $statement = $connection->prepare($sql);
+    if ($statement->execute([':id' => $id])) {
+        header("Location: /");
+    }

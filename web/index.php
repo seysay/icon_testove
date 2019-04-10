@@ -15,4 +15,4 @@ spl_autoload_register([$loader, 'loadClass']);
 
 $router = new \liw\core\Router();
 $router->start();
-require_once '../app/views/main.php';
+
