@@ -19,7 +19,7 @@
              //створення екземпляр класу
              $controller_obj = new $controller();
              $controller_obj->{$routing[$route]['action']}();
-         }else{
+         } else {
              //echo 'Немає такого шляху';
          }
         }

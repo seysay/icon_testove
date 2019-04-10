@@ -1,5 +1,6 @@
 <?php
 namespace app;
+
 use vendor\GoodRoom;
 
     class Room extends GoodRoom
