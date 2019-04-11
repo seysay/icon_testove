@@ -24,8 +24,14 @@ class MainController
             $faculty = $_POST['faculty'];
             $sql = 'INSERT INTO people(name, surname,age,sex,groupa,faculty) VALUES(:name, :surname,:age,:sex,:groupa,:faculty)';
             $statement = $connection->prepare($sql);
-            if ($statement->execute([':name' => $name, ':surname' => $surname, ':age' => $age, ':sex' => $sex, ':groupa' => $groupa, ':faculty' => $faculty])) {
-                $message = 'data inserted successfully';
+            if ($statement->execute([
+                ':name' => $name,
+                ':surname' => $surname,
+                ':age' => $age,
+                ':sex' => $sex,
+                ':groupa' => $groupa,
+                ':faculty' => $faculty])) {
+                $message = 'Добавлено студента';
 
             }
         }
@@ -50,9 +56,17 @@ class MainController
             $faculty = $_POST['faculty'];
             $sql = 'UPDATE people SET name=:name, surname=:surname, age=:age, sex=:sex, groupa=:groupa, faculty=:faculty WHERE id=:id';
             $statement = $connection->prepare($sql);
-            if ($statement->execute([':name' => $name, ':surname' => $surname, ':age' => $age, ':sex' => $sex, ':groupa' => $groupa, ':faculty' => $faculty])) {
+            if ($statement->execute([
+                ':name' => $name,
+                ':surname' => $surname,
+                ':age' => $age,
+                ':sex' => $sex,
+                ':groupa' => $groupa,
+                ':faculty' => $faculty,
+                ':id' =>$id])) {
                 header("Location: /");
             }
+            $message = 'Зміни пройшли успішно, Вітаю)';
         }
         require __DIR__ . '/../views/edit.html';
 

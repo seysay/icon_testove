@@ -6,5 +6,5 @@
     try {
         $connection = new PDO($dsn, $username, $password, $options);
     } catch(PDOException $e) {
-
+        echo ('ERROR: ' . $e->getMessage());
     }

@@ -16,8 +16,6 @@
             }
             //формуємо повну назву з файла
            $file = $prefix_file . implode('/', $arr) . '.php';
-
-
             if(is_file($file)){
                 require_once $file;
             }
