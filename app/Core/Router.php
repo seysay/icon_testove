@@ -1,5 +1,5 @@
 <?php
-    namespace liw\core;
+    namespace App\Core;
 
     class Router
     {
@@ -9,14 +9,14 @@
 
          $routing = [
              // путь /, є конкретний контролер мейн, і метод екшин буде виконувати індекс
-             "/"=> ['controller' =>"Main", 'action' =>'index'],
-             "/create.html"=> ['controller' =>"Main", 'action' =>'create'],
-             "/edit.html"=> ['controller' =>"Main", 'action' =>'edit'],
-             "/delete.php"=> ['controller' =>"Main", 'action' =>'delete']
+             "/"=> ['controller' =>"", 'action' =>'index'],
+             "/create.html"=> ['controller' =>"", 'action' =>'create'],
+             "/edit.html"=> ['controller' =>"", 'action' =>'edit'],
+             "/delete.php"=> ['controller' =>"", 'action' =>'delete']
          ];
 
          if (isset($routing[$route])) {
-             $controller = 'app\\controllers\\' . $routing[$route]['controller'] . 'Controller';
+             $controller = 'app\\Controllers\\' . $routing[$route]['controller'] . 'Controller';
              //створення екземпляр класу
              $controller_obj = new $controller();
              $controller_obj->{$routing[$route]['action']}();

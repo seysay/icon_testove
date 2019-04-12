@@ -1,19 +1,19 @@
 <?php
-namespace app\controllers;
+namespace App\Controllers;
 
 
-class MainController
+class Controller
 {
     //метод індекс
     public function index()
     {
-        require_once '../app/views/main.html';
+        require_once __DIR__ .'/../Views/main.html';
 
 
     }
     public function create()
     {
-        require __DIR__ . '/../views/db.php';
+        require __DIR__ . '/../Config/db.php';
         $message = '';
         if (isset ($_POST['name'])  &&
             isset($_POST['surname']) &&
@@ -42,12 +42,12 @@ class MainController
             }
         }
 
-        require __DIR__ . '/../views/create.html';
+        require __DIR__ . '/../Views/create.html';
 
     }
     public function edit()
     {
-        require __DIR__ . '/../views/db.php';
+        require __DIR__ . '/../Config/db.php';
         $id = $_GET['id'];
         $sql = 'SELECT * FROM people WHERE id=:id';
         $statement = $connection->prepare($sql);
@@ -80,13 +80,13 @@ class MainController
                 header("Location: /");
             }
         }
-        require __DIR__ . '/../views/edit.html';
+        require __DIR__ . '/../Views/edit.html';
 
     }
     public function delete()
     {
 
-        require __DIR__ . '/../views/db.php';
+        require __DIR__ . '../Config/db.php';
         $id = $_GET['id'];
         $sql = 'DELETE FROM people WHERE id=:id';
         $statement = $connection->prepare($sql);

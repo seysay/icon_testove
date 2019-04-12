@@ -1,5 +1,5 @@
 <?php
-    require 'db.php';
+    require __DIR__ . '/../Config/db.php';
     $sql = 'SELECT * FROM people';
     $statement = $connection->prepare($sql);
     $statement->execute();
