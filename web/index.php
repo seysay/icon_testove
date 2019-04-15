@@ -1,15 +1,10 @@
 <?php
 
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-//підключення Loader
-//require __DIR__ . '../vendor/autoload.php';
-require '../app/Core/Loader.php';
-//новий екземпляр Loader
-$loader = new \App\Core\Loader();
-//Реєстрація загрущика класа
-spl_autoload_register([$loader, 'loadClass']);
+//підключення autoload
+require_once __DIR__ . '/../vendor/autoload.php';
 
-$router = new \app\Core\Router();
+$router = new App\Core\Router();
 $router->start();

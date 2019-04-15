@@ -1,11 +1,5 @@
-<?php
-    require __DIR__ . '/../Config/db.php';
-    $sql = 'SELECT * FROM people';
-    $statement = $connection->prepare($sql);
-    $statement->execute();
-    $people = $statement->fetchAll(PDO::FETCH_OBJ);
-?>
-<?php require 'header.php'; ?>
+
+<?php require 'header.html'; ?>
 <div class="container-fluid">
     <div class="card mt-5">
         <div class="card-header">
@@ -14,27 +8,26 @@
         <div class="card-body">
             <table class="table table-bordered">
                 <tr>
-
                     <th>Ім'я</th>
                     <th>Прізвище</th>
-                    <th>Стать</th>
                     <th>Вік</th>
+                    <th>Стать</th>
                     <th>Група</th>
                     <th>Факультет</th>
                     <th>Action</th>
                 </tr>
-                <?php foreach($people as $person): ?>
+                <?php foreach($students as $studentRecord): ?>
                     <tr>
 
-                        <td><?= $person->name; ?></td>
-                        <td><?= $person->surname; ?></td>
-                        <td><?= $person->age; ?></td>
-                        <td><?= $person->sex; ?></td>
-                        <td><?= $person->groupa; ?></td>
-                        <td><?= $person->faculty; ?></td>
+                        <td><?php echo $studentRecord->getName(); ?></td>
+                        <td><?php echo $studentRecord->getSurname(); ?></td>
+                        <td><?php echo $studentRecord->getAge(); ?></td>
+                        <td><?php echo $studentRecord->getSex(); ?></td>
+                        <td><?php echo $studentRecord->getGroupa(); ?></td>
+                        <td><?php echo $studentRecord->getFaculty(); ?></td>
                         <td>
-                            <a href="edit.html?id=<?= $person->id ?>" class="btn btn-info">Edit</a>
-                            <a onclick="return confirm('Ви дійсно хочете видалити студента?')" href="delete.php?id=<?= $person->id ?>" class='btn btn-danger'>Delete</a>
+                            <a href="edit.html?id=<?= $studentRecord->getId() ?>" class="btn btn-info">Edit</a>
+                            <a onclick="return confirm('Ви дійсно хочете видалити студента?')" href="delete.html?id=<?= $studentRecord->getId() ?>" class='btn btn-danger'>Delete</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -42,4 +35,4 @@
         </div>
     </div>
 </div>
-<?php require 'footer.php'; ?>
+<?php require 'footer.html'; ?>
