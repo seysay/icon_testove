@@ -41,6 +41,11 @@ class Controller
     }
     public function delete()
     {
-        $id = $_GET['id'];
+       // $id = $_GET['id'];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $student = new Student($_POST);
+            $student->save();
+            // Redirect
+        }
     }
 }

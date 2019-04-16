@@ -111,12 +111,12 @@ class Student
               VALUES(:name, :surname,:age,:sex,:groupa,:faculty)';
                 $statement = $this->pdo->prepare($sql);
                 if ($statement->execute([
-                    ':name' => $name,
-                    ':surname' => $surname,
-                    ':age' => $age,
-                    ':sex' => $sex,
-                    ':groupa' => $groupa,
-                    ':faculty' => $faculty])) {
+                    ':name' => $this->name,
+                    ':surname' => $this->surname,
+                    ':age' => $this->age,
+                    ':sex' => $this->sex,
+                    ':groupa' => $this->groupa,
+                    ':faculty' => $this->faculty])) {
                 }
             } else {
                 $sql = 'UPDATE people SET name=:name, surname=:surname, age=:age, sex=:sex,
@@ -124,13 +124,13 @@ class Student
               WHERE id=:id';
                 $statement = $this->pdo->prepare($sql);
                 if ($statement->execute([
-                    ':name' => $name,
-                    ':surname' => $surname,
-                    ':age' => $age,
-                    ':sex' => $sex,
-                    ':groupa' => $groupa,
-                    ':faculty' => $faculty,
-                    ':id' => $id])) {
+                    ':name' => $this->name,
+                    ':surname' => $this->surname,
+                    ':age' => $this->age,
+                    ':sex' => $this->sex,
+                    ':groupa' => $this->groupa,
+                    ':faculty' => $this->faculty,
+                    ':id' => $this->id])) {
 
                 }
             }
@@ -144,7 +144,9 @@ class Student
         $sql = 'DELETE FROM people WHERE id=:id';
         $statement = $this->pdo->prepare($sql);
 
-        if ($statement->execute([':id' => $id])) {
+        if ($statement->execute([
+            ':id' => $this->id])) {
+
             header("Location: /");
         }
     }

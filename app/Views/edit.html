@@ -7,33 +7,34 @@
         <div class="card-body">
             <?php if(!empty($message)): ?>
                 <div class="alert alert-success">
-                    <?= $message; ?>
+                    <?php echo $message; ?>
                 </div>
             <?php endif; ?>
             <form method="post">
+
                 <div class="form-group">
                     <label for="name">Ім'я</label>
-                    <input value="<?= $person->name; ?>" type="text" name="name" id="name" class="form-control">
+                    <input value="<?php echo $student->getName(); ?>" type="text" name="name" id="name" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="surname">Прізвище</label>
-                    <input value="<?= $person->surname; ?>" type="text" name="surname" id="surname" class="form-control">
+                    <input value="<?php echo $student->getSurname(); ?>" type="text" name="surname" id="surname" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="age">Вік</label>
-                    <input value="<?= $person->age; ?>" type="text" name="age" id="age" class="form-control">
+                    <input value="<?php echo $student->getAge(); ?>" type="text" name="age" id="age" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="sex">Стать</label>
-                    <input value="<?= $person->sex; ?>" type="text" name="sex" id="sex" class="form-control">
+                    <input value="<?php echo $student->getSex(); ?>" type="text" name="sex" id="sex" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="groupa">Група</label>
-                    <input value="<?= $person->groupa; ?>" type="text" name="groupa" id="groupa" class="form-control">
+                    <input value="<?php echo $student->getGroupa(); ?>" type="text" name="groupa" id="groupa" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="faculty">Факультет</label>
-                    <input value="<?= $person->faculty; ?>" type="text" name="faculty" id="faculty" class="form-control">
+                    <input value="<?php echo $student->getFaculty(); ?>" type="text" name="faculty" id="faculty" class="form-control">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-info">Оновити дані</button>
