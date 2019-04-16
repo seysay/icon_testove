@@ -50,7 +50,7 @@ class Student
      */
     public function __construct($data = [])
     {
-        $this->id = isset($data['id']) ? $data['id'] : '';
+        $this->id = isset($data['id']) ? $data['id'] : null;
         $this->name = isset ($data['name']) ? $data['name'] : '';
         $this->surname = isset ($data['surname']) ? $data['surname'] : '';
         $this->age =  isset ($data['age']) ? $data['age'] : '';
@@ -104,37 +104,40 @@ class Student
         return $studentsCollection;
     }
 
-        public function save()
-        {
-            if ($this->id) {
-                $sql = 'INSERT INTO people(name,surname,age,sex,groupa,faculty)
-              VALUES(:name, :surname,:age,:sex,:groupa,:faculty)';
-                $statement = $this->pdo->prepare($sql);
-                if ($statement->execute([
-                    ':name' => $this->name,
-                    ':surname' => $this->surname,
-                    ':age' => $this->age,
-                    ':sex' => $this->sex,
-                    ':groupa' => $this->groupa,
-                    ':faculty' => $this->faculty])) {
-                }
-            } else {
-                $sql = 'UPDATE people SET name=:name, surname=:surname, age=:age, sex=:sex,
-              groupa=:groupa, faculty=:faculty 
-              WHERE id=:id';
-                $statement = $this->pdo->prepare($sql);
-                if ($statement->execute([
-                    ':name' => $this->name,
-                    ':surname' => $this->surname,
-                    ':age' => $this->age,
-                    ':sex' => $this->sex,
-                    ':groupa' => $this->groupa,
-                    ':faculty' => $this->faculty,
-                    ':id' => $this->id])) {
+    public function save()
+    {
+        if (is_null($this->id)) {
+            $sql = 'INSERT INTO people(name,surname,age,sex,groupa,faculty)
+                VALUES(:name, :surname, :age, :sex, :groupa, :faculty)';
 
-                }
-            }
+            $statement = $this->pdo->prepare($sql);
+
+            $statement->execute([
+                ':name' => $this->name,
+                ':surname' => $this->surname,
+                ':age' => $this->age,
+                ':sex' => $this->sex,
+                ':groupa' => $this->groupa,
+                ':faculty' => $this->faculty]);
+
+        } else {
+            $sql = 'UPDATE people SET name=:name, surname=:surname, age=:age, sex=:sex,
+                groupa=:groupa, faculty=:faculty 
+                WHERE id=:id';
+
+            $statement = $this->pdo->prepare($sql);
+
+            $statement->execute([
+                ':name' => $this->name,
+                ':surname' => $this->surname,
+                ':age' => $this->age,
+                ':sex' => $this->sex,
+                ':groupa' => $this->groupa,
+                ':faculty' => $this->faculty,
+                ':id' => $this->id
+            ]);
         }
+    }
 
     /**
      * @param $id

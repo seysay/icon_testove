@@ -13,27 +13,30 @@
             <form method="post">
                 <div class="form-group">
                     <label for="name">Ім'я</label>
-                    <input type="text" name="name" id="name" class="form-control">
+                    <input type="text" name="name" id="name" required placeholder="Ваше ім'я" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="surname">Прізвище</label>
-                    <input type="text" name="surname" id="surname" class="form-control">
+                    <input type="text" name="surname" id="surname" required placeholder="Ваше прізвище" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="age">Вік</label>
-                    <input type="text" name="age" id="age" class="form-control">
+                    <input type="number" name="age" id="age" required placeholder="Ваш вік" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="sex">Стать</label>
-                    <input type="text" name="sex" id="sex" class="form-control">
+                    <select class="form-control"type="text" name="sex" id="sex" required placeholder="Ваша стать" class="form-control">
+                        <option>Чоловіча</option>
+                        <option>Жіноча</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="groupa">Група</label>
-                    <input type="text" name="groupa" id="groupa" class="form-control">
+                    <input type="text" name="groupa" id="groupa" required placeholder="Ваша група" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="faculty">Факультет</label>
-                    <input type="text" name="faculty" id="faculty" class="form-control">
+                    <input type="text" name="faculty" id="faculty" required placeholder="Ваш факультет" class="form-control">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-info">Добавити студента</button>
