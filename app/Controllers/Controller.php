@@ -16,6 +16,7 @@ class Controller
 
 
     }
+    //@TODO: Не створює нових користувачів
     public function create()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -23,8 +24,9 @@ class Controller
             $student->save();
             // Redirect
         }
+        require_once __DIR__ . '/../Views/create.html';
     }
-
+//@TODO: Не зберігає нових користувачів
     public function edit()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -41,11 +43,9 @@ class Controller
     }
     public function delete()
     {
-       // $id = $_GET['id'];
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $student = new Student($_POST);
-            $student->save();
-            // Redirect
-        }
+        $student = new Student();
+        $student->load($_GET['id']);
+        $student->delete();
+        var_dump($student);exit;
     }
 }

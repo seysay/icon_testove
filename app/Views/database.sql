@@ -1,7 +1,7 @@
 create database students;
 
 use students;
-/*дам структури бази даних*/
+/*дам структури бази даних*/DO
 create table people (
   id  int(11) auto_increment primary key,
   name varchar(30) not null,

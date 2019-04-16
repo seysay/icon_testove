@@ -139,7 +139,7 @@ class Student
     /**
      * @param $id
      */
-    public function delete($id)
+    public function delete()
     {
         $sql = 'DELETE FROM people WHERE id=:id';
         $statement = $this->pdo->prepare($sql);
@@ -147,10 +147,8 @@ class Student
         if ($statement->execute([
             ':id' => $this->id])) {
 
-            header("Location: /");
         }
     }
-
 
     /**
      * @return mixed

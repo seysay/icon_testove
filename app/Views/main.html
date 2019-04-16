@@ -26,8 +26,8 @@
                         <td><?php echo $studentRecord->getGroupa(); ?></td>
                         <td><?php echo $studentRecord->getFaculty(); ?></td>
                         <td>
-                            <a href="edit.html?id=<?= $studentRecord->getId() ?>" class="btn btn-info">Edit</a>
-                            <a onclick="return confirm('Ви дійсно хочете видалити студента?')" href="delete.html?id=<?= $studentRecord->getId() ?>" class='btn btn-danger'>Delete</a>
+                            <a href="edit.html?id=<?= $studentRecord->getId() ?>" class="btn btn-info">Редагувати</a>
+                            <a onclick="return confirm('Ви дійсно хочете видалити студента?')" href="delete.html?id=<?= $studentRecord->getId() ?>" class='btn btn-danger'>Видалити</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

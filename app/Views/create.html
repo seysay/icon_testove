@@ -1,4 +1,4 @@
-<?php require 'header.php'; ?>
+<?php require 'header.html'; ?>
 <div class="container">
     <div class="card mt-5">
         <div class="card-header">
@@ -7,7 +7,7 @@
         <div class="card-body">
             <?php if(!empty($message)): ?>
                 <div class="alert alert-success">
-                    <?= $message; ?>
+                    <?php echo $message; ?>
                 </div>
             <?php endif; ?>
             <form method="post">
@@ -42,4 +42,4 @@
         </div>
     </div>
 </div>
-<?php require 'footer.php'; ?>
+<?php require 'footer.html'; ?>
