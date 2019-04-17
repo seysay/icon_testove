@@ -22,8 +22,8 @@ class Router
         if (isset($routing[$route])) {
             $controller = 'App\\Controllers\\' . $routing[$route]['controller'] . 'Controller';
             //створення екземпляр класу
-            $controller_obj = new $controller();
-            $controller_obj->{$routing[$route]['action']}();
+            $controllerInstance = new $controller();
+            $controllerInstance->{$routing[$route]['action']}();
         } else {
            throw new \Exception("Помилка");
         }
