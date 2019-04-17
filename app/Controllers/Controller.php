@@ -7,6 +7,7 @@ use App\Model\Student;
 class Controller
 {
     //метод індекс
+    /** Контроллер для шаблону main.html */
     public function index()
     {
         $student = new Student();
@@ -16,9 +17,9 @@ class Controller
 
 
     }
+    /** Контроллер для шаблону create.html */
     public function create()
     {
-        //TODO: Не створює нових користувачів
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $student = new Student($_POST);
@@ -28,9 +29,9 @@ class Controller
         require_once __DIR__ . '/../Views/create.html';
     }
 
+    /** Контроллер для шаблону edit.html */
     public function edit()
     {
-        //TODO: Не зберігає нових користувачів
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $student = new Student($_POST);
@@ -44,6 +45,7 @@ class Controller
         require_once __DIR__ . '/../Views/edit.html';
 
     }
+     /**Контроллер для шаблону delete.html */
     public function delete()
     {
         $student = new Student();

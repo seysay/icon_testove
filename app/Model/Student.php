@@ -62,12 +62,16 @@ class Student
         $username = 'root';
         $password = '123';
         $options = [];
-        //try {
+
         $connection = new \PDO($dsn, $username, $password, $options);
 
         $this->pdo = $connection;
     }
 
+    /**
+     * @param $id
+     * @return $this
+     */
     public function load($id)
     {
         $sql = 'SELECT * FROM people WHERE id=?';
