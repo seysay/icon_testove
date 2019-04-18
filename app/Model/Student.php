@@ -36,7 +36,7 @@ class Student
     /**
      * @var string
      */
-    private $groupa;
+    private $group;
 
     /**
      * @var string
@@ -55,7 +55,7 @@ class Student
         $this->surname = isset ($data['surname']) ? $data['surname'] : '';
         $this->age =  isset ($data['age']) ? $data['age'] : '';
         $this->sex = isset ($data['sex']) ? $data['sex'] : '';
-        $this->groupa = isset ($data['groupa']) ? $data['groupa'] : '';
+        $this->group = isset ($data['group']) ? $data['group'] : '';
         $this->faculty = isset ($data['faculty']) ? $data['faculty'] : '';
 
         $dsn = 'mysql:host=localhost;dbname=students';
@@ -111,8 +111,8 @@ class Student
     public function save()
     {
         if (is_null($this->id)) {
-            $sql = 'INSERT INTO people(name,surname,age,sex,groupa,faculty)
-                VALUES(:name, :surname, :age, :sex, :groupa, :faculty)';
+            $sql = 'INSERT INTO people(name,surname,age,sex,group,faculty)
+                VALUES(:name, :surname, :age, :sex, :group, :faculty)';
 
             $statement = $this->pdo->prepare($sql);
 
@@ -121,12 +121,12 @@ class Student
                 ':surname' => $this->surname,
                 ':age' => $this->age,
                 ':sex' => $this->sex,
-                ':groupa' => $this->groupa,
+                ':group' => $this->group,
                 ':faculty' => $this->faculty]);
 
         } else {
             $sql = 'UPDATE people SET name=:name, surname=:surname, age=:age, sex=:sex,
-                groupa=:groupa, faculty=:faculty 
+                group=:group, faculty=:faculty 
                 WHERE id=:id';
 
             $statement = $this->pdo->prepare($sql);
@@ -136,7 +136,7 @@ class Student
                 ':surname' => $this->surname,
                 ':age' => $this->age,
                 ':sex' => $this->sex,
-                ':groupa' => $this->groupa,
+                ':group' => $this->group,
                 ':faculty' => $this->faculty,
                 ':id' => $this->id
             ]);
@@ -250,18 +250,18 @@ class Student
     /**
      * @return mixed
      */
-    public function getGroupa()
+    public function getGroup()
     {
-        return $this->groupa;
+        return $this->group;
     }
 
     /**
-     * @param mixed $groupa
+     * @param mixed $group
      * @return Student
      */
-    public function setGroupa($groupa)
+    public function setGroup($group)
     {
-        $this->groupa = $groupa;
+        $this->group = $group;
         return $this;
     }
 
