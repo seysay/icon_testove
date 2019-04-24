@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Core;
-/** Налаштування роутера, щоб працювали запити: index,create,edit,delete */
+
 class Router
 {
     /**

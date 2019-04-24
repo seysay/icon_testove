@@ -11,34 +11,34 @@
                 </div>
             <?php endif; ?>
             <form method="post">
-                <input value="<?php echo $student->getId(); ?>" type="hidden" name="id" id="id"  class="form-control">
+                <input value="<?php echo $student->getId(); ?>" type="hidden" name="id" id="id" class="form-control">
 
                 <div class="form-group">
                     <label for="name">Ім'я</label>
-                    <input value="<?php echo $student->getName(); ?>" type="text" name="name" id="name" required class="form-control">
+                    <input value="<?php echo $student->getName(); ?>" type="text" name="name" id="name" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="surname">Прізвище</label>
-                    <input value="<?php echo $student->getSurname(); ?>" type="text" name="surname" id="surname" required class="form-control">
+                    <input value="<?php echo $student->getSurname(); ?>" type="text" name="surname" id="surname" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="age">Вік</label>
-                    <input value="<?php echo $student->getAge(); ?>" type="number" name="age" id="age" required class="form-control">
+                    <input value="<?php echo $student->getAge(); ?>" type="number" name="age" id="age" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="sex">Стать</label>
-                    <select value="<?php echo $student->getSex(); ?>" type="text" name="sex" id="sex" required class="form-control">
+                    <select value="<?php echo $student->getSex(); ?>" type="text" name="sex" id="sex"class="form-control">
                         <option>Чоловіча</option>
                         <option>Жіноча</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label for="group">Група</label>
-                    <input value="<?php echo $student->getGroup(); ?>" type="text" name="group" id="group" required class="form-control">
+                    <input value="<?php echo $student->getGroup(); ?>" type="text" name="group" id="group" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="faculty">Факультет</label>
-                    <input value="<?php echo $student->getFaculty(); ?>" type="text" name="faculty" id="faculty" required class="form-control">
+                    <input value="<?php echo $student->getFaculty(); ?>" type="text" name="faculty" id="faculty" class="form-control">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-info">Оновити дані</button>

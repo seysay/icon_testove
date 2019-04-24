@@ -4,48 +4,50 @@ namespace App\Controllers;
 
 use App\Model\Student;
 
+use App\Form\StudentsForm;
+
 class Controller
 {
-    //метод індекс
-    /** Контроллер для шаблону main.html */
+
     public function index()
     {
         $student = new Student();
         $students = $student->getAll();
 
-     require_once __DIR__ .'/../Views/main.html';
-
-
+        require_once __DIR__ .'/../Views/main.html';
     }
-    /** Контроллер для шаблону create.html */
+
     public function create()
     {
+        $form = new StudentsForm();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $student = new Student($_POST);
-            $student->save();
-            header("Location: /");
+            if ($form->validate($_POST)) {
+                $student = new Student($_POST);
+                $student->save();
+                header("Location: /");
+            }
         }
         require_once __DIR__ . '/../Views/create.html';
     }
 
-    /** Контроллер для шаблону edit.html */
     public function edit()
     {
+        $form = new StudentsForm();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $student = new Student($_POST);
-            $student->save();
-            header("Location: /");
-        }
+            if ($form->validate($_POST)){
+                $student = new Student($_POST);
+                $student->save();
 
+                header("Location: /");
+            }
+        }
         $student = new Student();
         $student->load($_GET['id']);
-
         require_once __DIR__ . '/../Views/edit.html';
-
     }
-     /**Контроллер для шаблону delete.html */
+
     public function delete()
     {
         $student = new Student();

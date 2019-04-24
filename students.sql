@@ -32,7 +32,7 @@ CREATE TABLE `people` (
   `surname` varchar(30) CHARACTER SET utf8 NOT NULL,
   `age` int(3) NOT NULL,
   `sex` varchar(30) CHARACTER SET utf8 NOT NULL,
-  `groupa` varchar(100) CHARACTER SET utf8 NOT NULL,
+  `group` varchar(100) CHARACTER SET utf8 NOT NULL,
   `faculty` varchar(100) CHARACTER SET utf8 NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -40,7 +40,7 @@ CREATE TABLE `people` (
 -- Дамп данных таблицы `people`
 --
 
-INSERT INTO `people` (`id`, `name`, `surname`, `age`, `sex`, `groupa`, `faculty`) VALUES
+INSERT INTO `people` (`id`, `name`, `surname`, `age`, `sex`, `group`, `faculty`) VALUES
 (5, 'Ð¡ÐµÑ€Ð³Ñ–Ð¹', 'ÐœÐ°Ñ…Ð½ÑŽÐº', 29, 'Ñ‡Ð¾Ð»Ð¾Ð²Ñ–Ðº', 'ÐŸÑÐ¸Ñ…Ð¾Ð»Ð¾Ð³Ñ–Ñ', 'ÐŸÐ°Ñ€Ð°Ð½Ð¾Ñ€Ð¼Ð°Ð»ÑŒÐ½Ñ– ÑÐ²Ð¸Ñ‰Ð°'),
 (6, 'ÐÐ½Ð°ÑÑ‚Ð°ÑÑ–Ñ', 'ÐœÐ°Ñ…Ð½ÑŽÐº', 25, 'Ð¶Ñ–Ð½Ð¾Ñ‡Ð°', 'Ð£Ð¼Ð½Ñ‹Ñ… Ð¸ Ð½Ð°Ñ…Ð¾Ð´Ñ‡Ð¸Ð²Ñ‹Ñ…', 'ÐŸÐµÐ´Ð°Ð³Ð¾Ð³Ñ–Ñ‡Ð½Ð¾Ñ— Ð¾ÑÐ²Ñ–Ñ‚Ð¸ Ñ‚Ð° ÑÐ¾Ñ†Ñ–Ð°Ð»ÑŒÐ½Ð¾Ñ— Ñ€Ð¾Ð±Ð¾Ñ‚Ð¸'),
 (9, 'ÐŸÐµÑ‚Ñ€Ð¾', 'ÐŸÐ¾Ñ€Ð¾ÑˆÐµÐ½ÐºÐ¾', 53, 'Ñ‡Ð¾Ð»Ð¾Ð²Ñ–Ðº', 'ÐŸÐµÑ€ÑˆÐ°', 'ÐµÐºÐ¾Ð½Ð¾Ð¼Ñ–ÑÑ‚-Ð¼Ñ–Ð¶Ð½Ð°Ñ€Ð¾Ð´Ð½Ð¸Ðº');
