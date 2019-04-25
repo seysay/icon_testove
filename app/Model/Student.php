@@ -50,7 +50,6 @@ class Student
     /**
      * Student constructor.
      * @param $data
-     * @param $pdo
      */
     public function __construct($data = [])
     {

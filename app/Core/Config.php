@@ -6,6 +6,9 @@ class Config
 {
     private $pdo;
 
+    /**
+     * Config constructor.
+     */
     public function __construct()
     {
         $dsn = 'mysql:host=localhost;dbname=students';
