@@ -2,7 +2,7 @@
 
 namespace App\Model;
 
-use  App\Core\Config;
+use  App\Core;
 
 /**
  * Class Student
@@ -60,7 +60,9 @@ class Student
         $this->sex = isset ($data['sex']) ? $data['sex'] : '';
         $this->group = isset ($data['group']) ? $data['group'] : '';
         $this->faculty = isset ($data['faculty']) ? $data['faculty'] : '';
-        $this->pdo = (new Config())->getPdo();
+
+        $this->pdo = (new Core\DB())->getPdo();
+
     }
     /**
      * @param $id
