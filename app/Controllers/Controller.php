@@ -45,6 +45,8 @@ class Controller
         }
         $student = new Student();
         $student->load($_GET['id']);
+
+
         require_once __DIR__ . '/../Views/edit.html';
     }
 
