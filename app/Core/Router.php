@@ -1,31 +1,16 @@
 <?php
 
-namespace App\Core;
+// main
+    $router->get('/', 'App\Controllers\Controller@index');
 
-class Router
-{
-    /**
-     * @throws \Exception
-     */
-    public function start()
-    {
-        $route = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+//  creating form
+    $router->get('/create.html',  'App\Controllers\Controller@create');
 
-        $routing = [
-            /** шлях /, є конкретний контролер main, і метод action буде виконувати index*/
-            "/"=> ['controller' =>"", 'action' =>'index'],
-            "/create.html"=> ['controller' =>"", 'action' =>'create'],
-            "/edit.html"=> ['controller' =>"", 'action' =>'edit'],
-            "/delete.html"=> ['controller' =>"", 'action' =>'delete']
-        ];
-        /** Робимо перевірку масиву*/
-        if (isset($routing[$route])) {
-            $controller = 'App\\Controllers\\' . $routing[$route]['controller'] . 'Controller';
-            //створення екземпляр класу
-            $controllerInstance = new $controller();
-            $controllerInstance->{$routing[$route]['action']}();
-        } else {
-           throw new \Exception("Помилка");
-        }
-    }
-}
+//  edit form
+    $router->get('/edit.html', 'App\Controllers\Controller@edit');
+//  form save post
+    $router->post('/create.html', 'App\Controllers\Controller@create');
+    $router->post('/edit.html', 'App\Controllers\Controller@edit');
+
+//  delete student
+    $router->get('delete.html', 'App\Controllers\Controller@delete');
